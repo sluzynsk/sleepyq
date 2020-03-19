@@ -1,16 +1,18 @@
 from setuptools import setup
 
+
 def readme():
     with open('README.rst') as f:
         return f.read()
 
+
 setup(name='sleepyq',
-      version='0.7',
+      version='0.8',
       description='SleepIQ API for Python',
       long_description=readme(),
-      url='http://github.com/technicalpickles/sleepyq',
-      author='Josh Nichols',
-      author_email='josh@technicalpickles.com',
+      url='http://github.com/sluzynsk/sleepyq',
+      author='Steve Luzynski',
+      author_email='steve@luzynski.net',
       license='MIT',
       packages=['sleepyq'],
       install_requires=[

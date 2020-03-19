@@ -17,20 +17,20 @@ To get started using the library, here's the full usage:
     >>>
     >>> client = Sleepyq('your-login', 'your-password')
     >>> client.login()
-    >>> pprint(client.sleepers())
-    >>> pprint(client.beds())
-    >>> pprint(client.bed_family_status())
+    >>> pprint(vars(client.sleepers()))
+    >>> pprint(vars(client.beds()))
+    >>> pprint(vars(client.bed_family_status()))
     >>> client.set_lights(bedNumber, lightNumber, setting)
-    >>> pprint(client.get_lights(bedNumber, lightNumber))
+    >>> pprint(vars(client.get_lights(bedNumber, lightNumber)))
     >>> client.preset(bedNumber, preset, side, slowSpeed=False)
     >>> client.set_sleepnumber(bedNumber, side, sleepnumber)
     >>> client.set_favsleepnumber(bedNumber, side, sleepnumber)
-    >>> pprint(client.get_favsleepnumber(bedNumber))
+    >>> pprint(vars(client.get_favsleepnumber(bedNumber)))
     >>> client.stop_motion(bedNumber, side)
     >>> client.stop_pump(bedNumber)
-    >>> pprint(client.foundation_status(bedNumber))
-    >>> pprint(client.foundation_system(bedNumber))
-    >>> pprint(client.foundation_features(bedNumber))
+    >>> pprint(vars(client.foundation_status(bedNumber)))
+    >>> pprint(vars(client.foundation_system(bedNumber)))
+    >>> pprint(vars(client.foundation_features(bedNumber)))
 
 The API is undocumented, so this library does not make much attempt to structure the data from the API into objects.
 
@@ -42,6 +42,8 @@ The SleepIQ API was `announced at CES 2016 <https://www.engadget.com/2016/01/04/
 https://sleepiq.sleepnumber.com appears to use the SleepIQ API internally, and methods here were written based on observing use of the site with Chrome Developer Tools and by running the Android app through a proxy. There was also prior art at https://github.com/erichelgeson/sleepiq (the API has changed since then) and https://github.com/natecj/sleepiq-php
 
 The first request to happen is to login. This returns a key (_k) that needs to be used on subsequent requests as a parameter. Subsequent requests also need to be part of the same 'session', since those calls expect some cookies to be set.
+
+Version 0.8 was taken over by a new author as the prior author hasn't touched it in about a year. I've manually integrated the outstanding PRs into this release, as well as making some other changes needed.
 
 Todo
 -----
